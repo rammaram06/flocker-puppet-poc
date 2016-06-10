@@ -28,7 +28,7 @@ password: admin
 ```
 
 So now make changes in jenkins and do what ever you like. Make sure the changes are all saved. To make sure our data persisted we will login to the box and kill the container.
-To do this make sure you are in the root of the Vagrant repo and issue:
+To do this make sure you are in the root directory of the Vagrant repo and issue:
 ```
 vagrant ssh flocker-02
 ```
@@ -44,4 +44,4 @@ log out of the box completely back to your host machines terminal and run Puppet
 ```
 vagrant provision flocker-02
 ```
-Once the Puppet run has complete and container will be back with all your changes  
+Once the Puppet run has completed the container will be back with all your changes.  
