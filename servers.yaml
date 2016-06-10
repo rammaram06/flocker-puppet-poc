@@ -1,0 +1,32 @@
+--- 
+- 
+  box: scottyc/centos-7-puppet-kernel-4-4
+  cpu: 1
+  ip: "172.17.7.101"
+  name: flocker-01
+  forward_ports:
+      - { guest: 80, host: 8080 }
+  ram: 2048
+  shell_commands: 
+      - { shell: 'systemctl stop firewalld && systemctl disable firewalld'}
+      - { shell: 'yum install -y wget git lvm2 device-mapper-libs' }
+      - { shell: '/opt/puppet/bin/gem install r10k && ln -s /opt/puppet/bin/r10k /usr/bin/r10k || true'}
+      - { shell: 'echo -e "172.17.7.101 flocker-01.local.test\n172.17.7.102 flocker-02.local.test">>/etc/hosts'}
+      - { shell: 'cp /home/vagrant/flocker-01/Puppetfile /tmp && cd /tmp && r10k puppetfile install --verbose' }
+      - { shell: 'cp /home/vagrant/flocker-01/modules/* -R /tmp/modules' }
+- 
+  box: scottyc/centos-7-puppet-kernel-4-4
+  cpu: 1
+  ip: "172.17.7.102"
+  name: flocker-02
+  forward_ports:
+      - { guest: 80, host: 8081 }
+  ram: 2048
+  shell_commands: 
+      - { shell: 'systemctl stop firewalld && systemctl disable firewalld'}
+      - { shell: 'yum install -y wget git lvm2 device-mapper-libs' }
+      - { shell: '/opt/puppet/bin/gem install r10k && ln -s /opt/puppet/bin/r10k /usr/bin/r10k || true'}
+      - { shell: 'echo -e "172.17.7.101 flocker-01.local.test\n172.17.7.102 flocker-02.local.test">/etc/hosts'}
+      - { shell: 'cp /home/vagrant/flocker-02/Puppetfile /tmp && cd /tmp && r10k puppetfile install --verbose' }
+      - { shell: 'cp /home/vagrant/flocker-02/modules/* -R /tmp/modules' }      
+     

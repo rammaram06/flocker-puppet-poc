@@ -1,0 +1,10 @@
+flocker::flocker_controller: flocker-01
+flocker::flocker_version: latest
+flocker::flocker_controller_fqdn: flocker-01.local.test
+flocker::yml_version: 1       
+flocker::storage_backend: loopback
+flocker::region: ap-southeast-2            
+flocker::zone: ap-southeast-2a              
+flocker::access_key_id: AKIAIYAWRWIX2QMKIS3Q    
+flocker::secret_access_key: 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
+docker::version: 1.10.3-1.el7.centos        

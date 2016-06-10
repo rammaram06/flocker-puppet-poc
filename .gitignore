@@ -1,0 +1,6 @@
+/.tmp
+/.vagrant/
+/.DS_Store
+/.bundle
+/production
+/run_demo.sh

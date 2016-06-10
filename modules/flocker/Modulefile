@@ -1,0 +1,10 @@
+name    'scottyc-flocker'
+version '0.1.0'
+
+author 'scottyc'
+summary 'flocker module'
+description 'flocker module'
+project_page 'https://stash.healthdirect.org.au/projects/puppet/repos/scottyc-flocker'
+
+# Add dependencies here, if any (NB: Must be in the form 'author/modulename')
+#dependency 'puppetlabs/stdlib', '>= 2.0.0'
